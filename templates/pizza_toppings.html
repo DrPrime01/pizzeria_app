@@ -11,5 +11,5 @@
     <li>No available topping</li>
     {% endfor %}
 </ul>
-
+<p><a href="{% url 'new_toppings' pizza.id %}">Add Pizza Toppings</a></p>
 {% endblock content %}

@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from pizzeria_app.views import homepage, pizzas, pizza_toppings #use this to avoid making mistakes with many imported views
+from pizzeria_app.views import homepage, pizzas, pizza_toppings, new_pizza, new_toppings #use this to avoid making mistakes with many imported views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name="homepage"),
     path('pizzas/', pizzas, name="pizzas"),
-    path('pizza_toppings/<int:pizza_id>/', pizza_toppings, name="pizza_toppings")
+    path('pizza_toppings/<int:pizza_id>/', pizza_toppings, name="pizza_toppings"),
+    path('new_pizza/', new_pizza, name="new_pizza"),
+    path('new_toppings/<int:pizza_id>/', new_toppings, name="new_toppings")
 ]
